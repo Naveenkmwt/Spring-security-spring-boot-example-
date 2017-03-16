@@ -1,0 +1,69 @@
+Configutation:
+  status: DEFAULT
+
+  Appenders:
+    Console:
+      name: CONSOLE
+      target: SYSTEM_OUT
+      PatternLayout:
+        Pattern: "%d{ISO8601} %-5p [%c{3}] [%t] %m%n"
+    RollingFile:
+      - name: APPLICATION
+        fileName: logs/auth_log.log
+        filePattern: "logs/$${date:yyyy-MM}/logs-%d{yyyy-MM-dd}-%i.log"
+        PatternLayout:
+          Pattern: "%d{ISO8601} %-5p [%c{3}] [%t] %m%n"
+        policies:
+          TimeBasedTriggeringPolicy:
+            interval: 1
+            modulate: true
+
+  Loggers:
+      Root:
+        level: info
+        AppenderRef:
+          - ref: CONSOLE
+          - ref: APPLICATION
+      Logger:
+        - name: com.scube
+          additivity: false
+          level: debug
+          AppenderRef:
+            - ref: CONSOLE
+            - ref: APPLICATION
+        - name: org.springframework.core
+          additivity: false
+          level: debug
+          AppenderRef:
+            - ref: CONSOLE
+            - ref: APPLICATION
+        - name: org.springframework.beans
+          additivity: false
+          level: debug
+          AppenderRef:
+            - ref: CONSOLE
+            - ref: APPLICATION
+        - name: org.springframework.context
+          additivity: false
+          level: debug
+          AppenderRef:
+            - ref: CONSOLE
+            - ref: APPLICATION
+        - name: org.springframework.web
+          additivity: false
+          level: debug
+          AppenderRef:
+            - ref: CONSOLE
+            - ref: APPLICATION
+        - name: org.springframework.security
+          additivity: false
+          level: debug
+          AppenderRef:
+            - ref: CONSOLE
+            - ref: APPLICATION
+        - name: org.springframework.security.oauth2
+          additivity: false
+          level: debug
+          AppenderRef:
+            - ref: CONSOLE
+            - ref: APPLICATION
