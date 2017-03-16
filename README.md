@@ -1,10 +1,11 @@
 # Registration and Login Example with Spring Security, oauth2 Spring Boot,Ldap Spring Data JPA, MySQL, JSP
 
 ## Guide
-https://hellokoding.com/registration-and-login-example-with-spring-security-spring-boot-spring-data-jpa-hsql-jsp/
+https://projects.spring.io/spring-security-oauth/docs/oauth2.html
+https://spring.io/guides/tutorials/spring-boot-oauth2/
 
 ## Prerequisites
-- JDK 1.7 or later
+- JDK 1.8
 - Maven 3 or later
 
 ## Stack
